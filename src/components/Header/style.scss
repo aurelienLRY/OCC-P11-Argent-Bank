@@ -1,0 +1,44 @@
+@use '../../assets/sass/abstracts/variables' as var;
+
+
+
+header {
+  width: 100%;
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+
+    &-link {
+      font-weight: bold;
+      color: var.$primary-color;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &-link.active {
+      color: var.$secondary-color;
+    }   
+
+    &-link:hover {
+      color: var.$secondary-color;
+    }
+
+    
+    &-logo {
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+        width: 200px;
+        img {
+          width: 100%;
+          height: auto;
+        }
+    }
+  }
+}

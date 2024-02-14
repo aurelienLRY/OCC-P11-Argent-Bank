@@ -1,10 +1,10 @@
-
+import './style.scss';
 
 const Footer = () => {
     return (
-        <footer>
-            <p>Ceci est le footer de l'application.</p>
-        </footer>
+        <footer className="footer">
+        <p className="footer-text">Copyright 2020 Argent Bank</p>
+      </footer>
     );
 };
 
