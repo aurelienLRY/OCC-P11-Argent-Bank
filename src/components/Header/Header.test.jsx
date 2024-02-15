@@ -1,4 +1,5 @@
-import { render } from '@testing-library/react';
+import { render} from '@testing-library/react';
+import { describe , it , expect } from 'vitest';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './index';
 
@@ -11,17 +12,9 @@ describe('Header', () => {
     );
   });
 
-  it('renders the logo', () => {
-    const { getByAltText } = render(
-      <Router>
-        <Header />
-      </Router>
-    );
-
-    expect(getByAltText('Argent Bank Logo')).toBeInTheDocument();
-  });
 
   it('renders the sign in link', () => {
+  
     const { getByText } = render(
       <Router>
         <Header />

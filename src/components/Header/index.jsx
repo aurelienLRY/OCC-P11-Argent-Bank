@@ -7,7 +7,7 @@ function Header() {
     <header>
       <nav className="nav">
         <Link to="/" className="nav-logo">
-          <img src={Logo} alt="Argent Bank Logo" />
+          <img src={Logo} alt="Argent Bank Logo"  data-testid="logo cie"/>
           <h1 className="sr-only">Argent Bank</h1>
         </Link>
 

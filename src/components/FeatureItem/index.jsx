@@ -4,10 +4,10 @@ import './style.scss';
 
 const FeatureItem = ({ iconSrc, title, description }) => {
     return (
-        <div className="feature-item">
+        <div className="feature-item" data-testid="feature-item">
             <img src={iconSrc} alt="Feature Icon" className="feature-icon" />
-            <h3 className="feature-item-title">{title}</h3>
-            <p>{description}</p>
+            <h3 className="feature-item-title" data-testid="feature-item-title">{title}</h3>
+            <p data-testid="feature-item-description">{description}</p>
         </div>
     );
 };

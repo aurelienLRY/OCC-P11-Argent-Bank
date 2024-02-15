@@ -1,9 +1,10 @@
+
 import PropTypes from 'prop-types';
 import './style.scss';
 
 export default function Hero({ UrlImg }) {
     return (
-        <div className="hero" style={{ backgroundImage: `url(${UrlImg})` }}>
+        <div className="hero" style={{ backgroundImage: `url(${UrlImg})` }} data-testid="hero">
             <section className="hero-content">
                 <h2 className="sr-only">Promoted Content</h2>
                 <p className="subtitle">No fees.</p>

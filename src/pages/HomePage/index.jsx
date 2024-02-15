@@ -4,7 +4,7 @@ import './style.scss';
 
 function Homepage() {
   return (
-    <main className="homepage" data-testid ="Home">
+    <main className="homepage main" data-testid ="Home">
       <Hero UrlImg={'/img/bank-tree.jpeg'}/>
      < FeatureList/>
     </main>

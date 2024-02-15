@@ -7,7 +7,7 @@ const FeatureList = () => {
     return (
         <section className='features'>
             {features.map((item , index) => (
-                <FeatureItem key={`feature-${index}`} title={item.title} description={item.description} iconSrc={item.icon} />
+                <FeatureItem key={`feature-${index}`} title={item.title} description={item.description} iconSrc={item.icon}  />
             ))}
         </section>
     );
