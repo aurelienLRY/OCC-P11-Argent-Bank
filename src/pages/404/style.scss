@@ -1,0 +1,39 @@
+@use "../../assets/sass/abstracts/variables" as v;
+
+.notFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      font-size: 3rem;
+      color: v.$secondary-color;
+      margin: 0;
+    }
+    p {
+      color: white;
+    }
+    .btn {
+        padding: 0.5em 1.5em;
+        max-width: max-content;
+        color: white;
+        background-color: v.$secondary-color; 
+        border-color:v.$secondary-color;
+        font-size: 1.1rem;
+        font-weight: bold;
+        transition: all 350ms ease-in-out;
+
+        &:hover {
+         transform: scale(1.05);
+        }
+     
+
+    }
+  }
+}

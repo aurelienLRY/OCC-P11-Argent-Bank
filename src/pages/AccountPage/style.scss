@@ -1,0 +1,14 @@
+@use '../../assets/sass/abstracts/variables' as v;
+
+.account-header{
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.edit-button {
+    border-color: v.$secondary-color;
+    background-color: v.$secondary-color;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+}
