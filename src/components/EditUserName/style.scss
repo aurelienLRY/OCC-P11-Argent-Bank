@@ -1,0 +1,53 @@
+@use '../../assets/sass/abstracts/variables' as v;
+
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+
+  .inputGroupe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+
+    input {
+      padding: 7px 5px;
+      border-radius: 5px;
+      border: none;
+
+      &:disabled{
+        background-color: #bbbbbb;
+      
+      }
+    }
+  }
+
+  &-input {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+  }
+
+  .edit-button {
+    box-sizing: border-box;
+    max-width: max-content;
+
+    background-color: v.$secondary-color;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+
+    &.lg{
+        padding: 10px 40px;
+    }
+}
+}

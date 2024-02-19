@@ -3,13 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import connect, { singInByRememberMe } from "./loginRequest";
 import SvgExclamation from "../../assets/images/svg/circle-exclamation-solid.jsx";
 import "./style.scss";
-import { useNavigate } from "react-router-dom";
+import { Navigate} from "react-router-dom";
 
 
 function LoginPage() {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated); //Charge isAuthenticated from the store
   const isRemembered = document.cookie.includes("token"); //Check if the token is in the cookie
-const navigate = useNavigate(); //Navigate to the account page
   const dispatch = useDispatch(); //Dispatch the action to the store
   const [username, setUsername] = useState(""); //Set the state of the username
   const [password, setPassword] = useState(""); //Set the state of the password
@@ -40,7 +39,7 @@ const navigate = useNavigate(); //Navigate to the account page
   
   //If the user is authenticated and there is no feedback, then redirect to the account page
   if (isAuthenticated && !feedback) {
-     navigate("/user");
+   return < Navigate to="/user" />
   }
 
 

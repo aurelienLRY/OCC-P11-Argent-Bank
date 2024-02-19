@@ -54,7 +54,6 @@ const profile = async (token) => {
  */
 export const singInByRememberMe = createAsyncThunk("auth/rememberMe", async () => {
   const isRemembered = document.cookie.includes("token");
-  console.log("Is remember",isRemembered);
   if (isRemembered) {
     const token = document.cookie.split("=")[1];
     const user = await profile(token);
