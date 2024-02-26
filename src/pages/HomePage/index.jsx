@@ -1,11 +1,11 @@
 import FeatureList from '../../container/FeatureList';
-import Hero from '../../components/Hero';
+import Banner from '../../components/Banner';
 import './style.scss';
 
 function Homepage() {
   return (
     <main className="homepage main" data-testid ="Home">
-      <Hero UrlImg={'/img/bank-tree.jpeg'}/>
+      <Banner UrlImg={'/img/bank-tree.jpeg'}/>
      < FeatureList/>
     </main>
   );

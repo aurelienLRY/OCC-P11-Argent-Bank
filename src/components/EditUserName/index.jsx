@@ -1,13 +1,23 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
+import { useDispatch, useSelector } from "react-redux";
+import putNewUserName from "./putNewUserName";
 import "./style.scss";
 
-function EditUserName({ firstName, lastName, userName }) {
+const EditUserName = () => {
+  const { firstName, userName, lastName } = useSelector(
+    (state) => state.auth.user.profil
+  );
+  const { token } = useSelector((state) => state.auth.user);
+  const dispatch = useDispatch();
+
   const [editMode, setEditMode] = useState(false);
   const [newUserName, setNewUserName] = useState(userName);
 
-  function editUserName(newUserName) {
-    console.log("newUserName >>>>", newUserName);
+ async function  editUserName(newUserName) {
+   dispatch(putNewUserName({ newUserName, token }));
+   if (putNewUserName.fulfilled) {
+     setEditMode(!editMode);
+   } 
   }
 
   if (editMode) {
@@ -30,29 +40,29 @@ function EditUserName({ firstName, lastName, userName }) {
           </div>
 
           <div className="inputGroupe">
-          <label htmlFor="firstName">First name:</label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            placeholder="First Name"
-            required
-            value={firstName}
-            disabled
-          />
+            <label htmlFor="firstName">First name:</label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              placeholder="First Name"
+              required
+              value={firstName}
+              disabled
+            />
           </div>
-          
+
           <div className="inputGroupe">
-          <label htmlFor="lastName">Last name:</label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            placeholder="Last Name"
-            required
-            value={lastName}
-            disabled
-          />
+            <label htmlFor="lastName">Last name:</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              placeholder="Last Name"
+              required
+              value={lastName}
+              disabled
+            />
           </div>
         </div>
         <div className="btn-group">
@@ -84,16 +94,6 @@ function EditUserName({ firstName, lastName, userName }) {
       </div>
     );
   }
-}
-
-EditUserName.propTypes = {
-  firstName: PropTypes.string.isRequired,
-  lastName: PropTypes.string.isRequired,
-  userName: PropTypes.string,
-};
-
-EditUserName.defaultProps = {
-  userName: "",
 };
 
 export default EditUserName;

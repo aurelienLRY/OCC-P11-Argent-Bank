@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import connect, {
   singInByRememberMe,
 } from "../../../pages/LoginPage/loginRequest";
+import putNewUserName from "../../../components/EditUserName/putNewUserName";
+
 
 const initialState = {
   isAuthenticated: false,
@@ -22,9 +24,6 @@ const authSlice = createSlice({
       state.user = null;
       state.isAuthenticated = false;
       state.error = null;
-    },
-    loadUser: (state, action) => {
-      state.user = action.payload;
     },
     reset: (state) => {
       state.error = null;
@@ -54,6 +53,17 @@ const authSlice = createSlice({
       .addCase(singInByRememberMe.rejected, (state, action) => {
         state.isAuthenticated = false;
         state.user = null;
+        state.error = action.error.message;
+      });
+    builder
+      .addCase(putNewUserName.fulfilled, (state, action) => {
+        state.user.profil = {
+          ...state.user.profil,
+          userName: action.payload,
+        };
+        state.error = null;
+      })
+      .addCase(putNewUserName.rejected, (state, action) => {
         state.error = action.error.message;
       });
   },
