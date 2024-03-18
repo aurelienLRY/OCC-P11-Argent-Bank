@@ -13,9 +13,9 @@ const Account = ({ accountType, accountNumber, balance, balanceDescription }) =>
     return (
         <article className="account" data-testid="account">
             <div className="account-content-wrapper">
-                <h3 className="account-title">{`${accountType} (${accountNumber})`}</h3>
-                <p className="account-amount">{balance}</p>
-                <p className="account-amount-description">{balanceDescription}</p>
+                <h3 className="account-title" data-testid="account-title">{`${accountType} (${accountNumber})`}</h3>
+                <p className="account-amount" data-testid="balance">{balance}</p>
+                <p className="account-amount-description" data-testid="balance-description">{balanceDescription}</p>
             </div>
             <div className="account-content-wrapper cta">
                 <button className="transaction-button">View transactions</button>

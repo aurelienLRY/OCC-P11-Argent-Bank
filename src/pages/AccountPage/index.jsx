@@ -1,7 +1,6 @@
 import accountData from "./DataAccount.json";
 import Account from "../../components/Account";
 import EditUserName from "../../components/EditUserName";
-//import editUserName  from "./editUserName";
 import "./style.scss";
 
 
@@ -18,6 +17,7 @@ const AccountPage = () => {
         role="Account Information"
         className="account-info"
         aria-labelledby="accountHeader"
+        data-testid="account-info"
       >
         <h2 id="accountHeader" className="sr-only">
           Accounts

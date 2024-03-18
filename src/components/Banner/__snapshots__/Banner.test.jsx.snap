@@ -1,16 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Hero > Snapshot  1`] = `
+exports[`Banner > Snapshot  1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
+      <section
         class="hero"
         data-testid="hero"
         style="background-image: url(https://via.placeholder.com/1440x400);"
       >
-        <section
+        <div
           class="hero-content"
         >
           <h2
@@ -38,17 +38,17 @@ exports[`Hero > Snapshot  1`] = `
           >
             Open a savings account with Argent Bank today!
           </p>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   </body>,
   "container": <div>
-    <div
+    <section
       class="hero"
       data-testid="hero"
       style="background-image: url(https://via.placeholder.com/1440x400);"
     >
-      <section
+      <div
         class="hero-content"
       >
         <h2
@@ -76,8 +76,8 @@ exports[`Hero > Snapshot  1`] = `
         >
           Open a savings account with Argent Bank today!
         </p>
-      </section>
-    </div>
+      </div>
+    </section>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

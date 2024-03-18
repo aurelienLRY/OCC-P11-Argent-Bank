@@ -14,7 +14,7 @@ const Routeur = () => {
         <Routes>
             <Route exact path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/user" element={isAuthenticated ? <AccountPage /> :<Navigate to= "/" /> } />
+            <Route path="/profile" element={isAuthenticated ? <AccountPage /> :<Navigate to= "/" /> } />
             <Route path="/*" element={<NotFoundPage />} />
         </Routes>
     );

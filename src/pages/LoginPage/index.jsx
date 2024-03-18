@@ -39,7 +39,7 @@ function LoginPage() {
   
   //If the user is authenticated and there is no feedback, then redirect to the account page
   if (isAuthenticated && !feedback) {
-   return < Navigate to="/user" />
+   return < Navigate to="/profile" />
   }
 
 

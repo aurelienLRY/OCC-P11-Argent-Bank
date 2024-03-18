@@ -1,7 +1,7 @@
 import { Link, NavLink  } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import "./style.scss";
-import Logo from "/img/argentBankLogo.png";
+import Logo from "/img/argentbanklogo-300.webp";
 import { logout } from "../../assets/redux/reducers/authSlice";
 
 function Header() {
@@ -27,9 +27,9 @@ function Header() {
           </NavLink>
         ) : (
           <div className="row">
-            <NavLink to="/user" className="nav-link">
+            <NavLink to="/profile" className="nav-link">
               <i className="fa fa-user-circle"></i>
-              {user.profil.firstName}
+              {user.profil.userName}
             </NavLink>
 
             <a className="nav-link" onClick={toggleLogOut}>

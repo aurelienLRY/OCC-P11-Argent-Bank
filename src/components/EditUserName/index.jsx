@@ -29,6 +29,7 @@ const EditUserName = () => {
           <div className="inputGroupe">
             <label htmlFor="userName">User name:</label>
             <input
+            data-testid="input-userName"
               type="text"
               id="userName"
               name="userName"

@@ -5,7 +5,7 @@ import './style.scss';
 function Homepage() {
   return (
     <main className="homepage main" data-testid ="Home">
-      <Banner UrlImg={'/img/bank-tree.jpeg'}/>
+      <Banner UrlImg={'/img/bank-tree.webp'}/>
      < FeatureList/>
     </main>
   );
