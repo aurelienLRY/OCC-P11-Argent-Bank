@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import connect, { singInByRememberMe } from "./loginRequest";
+import {reset} from "../../assets/redux/reducers/authSlice";
 import SvgExclamation from "../../assets/images/svg/circle-exclamation-solid.jsx";
 import "./style.scss";
 import { Navigate} from "react-router-dom";
@@ -34,7 +35,7 @@ function LoginPage() {
 
   //Dispatch the action to reset the feedback
   const toggleReset = () => {
-    dispatch({ type: "auth/reset" });
+    dispatch(reset());
   };
   
   //If the user is authenticated and there is no feedback, then redirect to the account page
@@ -50,7 +51,6 @@ function LoginPage() {
         <h2>Sign In</h2>
         {feedback && (
           <p className="feedback error">
-            {" "}
             <SvgExclamation /> {feedback}
           </p>
         )}
@@ -61,7 +61,7 @@ function LoginPage() {
               type="text"
               id="username"
               onBlur={(e) => setUsername(e.target.value)}
-              onChange={feedback && toggleReset}
+              onChange={ toggleReset}
               required
             />
           </div>
@@ -71,7 +71,7 @@ function LoginPage() {
               type="password"
               id="password"
               onBlur={(e) => setPassword(e.target.value)}
-              onChange={feedback && toggleReset}
+              onChange={ toggleReset}
               required
             />
           </div>
